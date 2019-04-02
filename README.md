@@ -13,7 +13,7 @@ You should review volumes, configuration, modules & tuning parameters before usi
 * [alfresco-search-services:1.3.0.1](https://hub.docker.com/r/alfresco/alfresco-search-services)
 * [alfresco-activemq:5.15.6](https://hub.docker.com/r/alfresco/alfresco-activemq)
 * [alfresco-content-app:latest](https://hub.docker.com/r/alfresco/alfresco-content-app/)
-* alfresco-api-explorer 6.1.0: Custom build
+* **alfresco-api-explorer 6.1.0**: Custom build
 * [nginx:stable-alpine](https://hub.docker.com/_/nginx)
 * [postgres:10.1](https://hub.docker.com/_/postgres)
 
@@ -74,6 +74,18 @@ Alfresco SOLR API has been protected to be accessed from outside Docker network.
 ```
 
 SOLR Web Console (http://localhost/solr) access has **not** been protected.
+
+## Locale configuration
+
+This repository is pre-configured for English (en) and Spanish (es) locales, but different languages can be configured by modifying following block in `config/solrconfig.xml` file.
+
+```xml
+<queryParser name="afts" class="org.alfresco.solr.query.AlfrescoFTSQParserPlugin">
+    <str name="rerankPhase">QUERY_PHASE</str>
+    <str name="autoDetectQueryLocale">true</str>
+    <str name="autoDetectQueryLocales">en,es</str>
+</queryParser>
+```
 
 # How to use this composition
 
