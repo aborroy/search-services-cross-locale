@@ -84,14 +84,14 @@ Start docker and check the ports are correctly bound.
 ```bash
 $ docker-compose up -d
 $ docker ps --format '{{.Names}}\t{{.Image}}\t{{.Ports}}'
-search-services-cross-locale_activemq_1	     alfresco/alfresco-activemq:5.15.6	0.0.0.0:5672->5672/tcp, 0.0.0.0:8161->8161/tcp, 0.0.0.0:61613->61613/tcp, 0.0.0.0:61616->61616/tcp
-search-services-cross-locale_postgres_1	     postgres:10.1	0.0.0.0:5432->5432/tcp
-search-services-cross-locale_content-app_1	 alfresco/alfresco-content-app:latest	0.0.0.0:8084->80/tcp
-search-services-cross-locale_alfresco_1	     alfresco/alfresco-content-repository-community:6.1.2-ga	0.0.0.0:8082->8080/tcp
-search-services-cross-locale_share_1	       alfresco/alfresco-share:6.1.0	8000/tcp, 0.0.0.0:8080->8080/tcp
-search-services-cross-locale_proxy_1	       nginx:stable-alpine	0.0.0.0:80->80/tcp
-search-services-cross-locale_api-explorer_1	 search-services-cross-locale_api-explorer	0.0.0.0:8085->8080/tcp
-search-services-cross-locale_solr6_1	       alfresco/alfresco-search-services:1.3.0.1	0.0.0.0:8083->8983/tcp
+activemq_1      alfresco/alfresco-activemq:5.15.6                       0.0.0.0:5672->5672/tcp, 0.0.0.0:8161->8161/tcp, 0.0.0.0:61613->61613/tcp, 0.0.0.0:61616->61616/tcp
+postgres_1      postgres:10.1                                           0.0.0.0:5432->5432/tcp
+content-app_1   alfresco/alfresco-content-app:latest                    0.0.0.0:8084->80/tcp
+alfresco_1      alfresco/alfresco-content-repository-community:6.1.2-ga 0.0.0.0:8082->8080/tcp
+share_1         alfresco/alfresco-share:6.1.0                           8000/tcp, 0.0.0.0:8080->8080/tcp
+proxy_1         nginx:stable-alpine                                     0.0.0.0:80->80/tcp
+api-explorer_1  search-services-cross-locale_api-explorer               0.0.0.0:8085->8080/tcp
+solr6_1         alfresco/alfresco-search-services:1.3.0.1               0.0.0.0:8083->8983/tcp
 ```
 
 ### Viewing System Logs
